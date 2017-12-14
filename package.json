@@ -1,0 +1,26 @@
+{
+  "name": "prologger",
+  "version": "1.2.1",
+  "description": "A very simple logger with extension support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PROPHESSOR/prologger.git"
+  },
+  "keywords": [
+    "logger",
+    "console",
+    "node",
+    "simple",
+    "custom"
+  ],
+  "author": "PROPHESSOR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PROPHESSOR/prologger/issues"
+  },
+  "homepage": "https://github.com/PROPHESSOR/prologger#readme"
+}
