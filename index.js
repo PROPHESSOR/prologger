@@ -47,7 +47,7 @@ class Logger {
     /**
      * Disable prefix by default
      * @public
-     * @type {boolean}
+     * @type {bool}
      */
 
     get noprefix() {
@@ -60,20 +60,20 @@ class Logger {
 
 
     /**
-   * Advance console.log
-   * @param  {any} data - data
-   * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-   * @param {string} [options.level] - Log with custom log level
-   * @param {bool} [noconvert] - Disable timestamp
-   * @param {bool} [prefix] - Enable prefix
-   * @returns {this} this
-   */
+     * Advance console.log
+     * @param  {any} data - data
+     * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
+     * @param {string} [options.level] - Log with custom log level
+     * @param {bool} [options.noconvert] - Disable timestamp
+     * @param {bool} [options.prefix] - Enable prefix
+     * @returns {this} this
+     */
     log(data, options = {}) {
         let out = data;
         if (typeof options === "object") { // It can be a number (0)/boolean (false)/string ('') etc.
             if (options.level && this.levels.indexOf(options.level) < 0) return this;
             out = !options.noconvert ? Logger.convert(data) : data;
-            if(!this._noprefix || options.prefix) out = `[LOG]: ${out}`;
+            if (!this._noprefix || options.prefix) out = `[LOG]: ${out}`;
         }
 
         console.log(chalk.cyan(out));
@@ -83,20 +83,20 @@ class Logger {
     }
 
     /**
-   * Advance console.warn
-   * @param  {any} data - data
-   * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-   * @param {string} [options.level] - Log with custom log level
-   * @param {bool} [noconvert] - Disable timestamp
-   * @param {bool} [prefix] - Enable prefix
-   * @returns {this} this
-   */
+     * Advance console.warn
+     * @param  {any} data - data
+     * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
+     * @param {string} [options.level] - Log with custom log level
+     * @param {bool} [options.noconvert] - Disable timestamp
+     * @param {bool} [options.prefix] - Enable prefix
+     * @returns {this} this
+     */
     warn(data, options = {}) {
         let out = data;
         if (typeof options === "object") { // It can be a number (0)/boolean (false)/string ('') etc.
             if (options.level && this.levels.indexOf(options.level) < 0) return this;
             if (!options.noconvert) out = Logger.convert(data);
-            if(!this._noprefix || options.prefix) out = `[WARN]: ${out}`;
+            if (!this._noprefix || options.prefix) out = `[WARN]: ${out}`;
         }
 
         console.warn(chalk.yellow(out));
@@ -106,20 +106,20 @@ class Logger {
     }
 
     /**
-   * Advance console.error
-   * @param  {any} data - data
-   * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-   * @param {string} [options.level] - Log with custom log level
-   * @param {bool} [noconvert] - Disable timestamp
-   * @param {bool} [prefix] - Enable prefix
-   * @returns {this} this
-   */
+     * Advance console.error
+     * @param  {any} data - data
+     * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
+     * @param {string} [options.level] - Log with custom log level
+     * @param {bool} [options.noconvert] - Disable timestamp
+     * @param {bool} [options.prefix] - Enable prefix
+     * @returns {this} this
+     */
     error(data, options = {}) {
         let out = data;
         if (typeof options === "object") { // It can be a number (0)/boolean (false)/string ('') etc.
             if (options.level && this.levels.indexOf(options.level) < 0) return this;
             if (!options.noconvert) out = Logger.convert(data);
-            if(!this._noprefix || options.prefix) out = `[ERROR]: ${out}`;
+            if (!this._noprefix || options.prefix) out = `[ERROR]: ${out}`;
         }
 
         console.error(chalk.red(out));
@@ -129,20 +129,20 @@ class Logger {
     }
 
     /**
-   * Advance console.info
-   * @param  {any} data - data
-   * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-   * @param {string} [options.level] - Log with custom log level
-   * @param {bool} [noconvert] - Disable timestamp
-   * @param {bool} [prefix] - Enable prefix
-   * @returns {this} this
-   */
+     * Advance console.info
+     * @param  {any} data - data
+     * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
+     * @param {string} [options.level] - Log with custom log level
+     * @param {bool} [options.noconvert] - Disable timestamp
+     * @param {bool} [options.prefix] - Enable prefix
+     * @returns {this} this
+     */
     info(data, options = {}) {
         let out = data;
         if (typeof options === "object") { // It can be a number (0)/boolean (false)/string ('') etc.
             if (options.level && this.levels.indexOf(options.level) < 0) return this;
             if (!options.noconvert) out = Logger.convert(data);
-            if(!this._noprefix || options.prefix) out = `[INFO]: ${out}`;
+            if (!this._noprefix || options.prefix) out = `[INFO]: ${out}`;
         }
 
         console.info(chalk.blue(out));
@@ -152,20 +152,20 @@ class Logger {
     }
 
     /**
-   * Analog of info but green
-   * @param  {any} data - data
-   * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-   * @param {string} [options.level] - Log with custom log level
-   * @param {bool} [noconvert] - Disable timestamp
-   * @param {bool} [prefix] - Enable prefix
-   * @returns {this} this
-   */
+     * Analog of info but green
+     * @param  {any} data - data
+     * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
+     * @param {string} [options.level] - Log with custom log level
+     * @param {bool} [options.noconvert] - Disable timestamp
+     * @param {bool} [options.prefix] - Enable prefix
+     * @returns {this} this
+     */
     success(data, options = {}) {
         let out = data;
         if (typeof options === "object") { // It can be a number (0)/boolean (false)/string ('') etc.
             if (options.level && this.levels.indexOf(options.level) < 0) return this;
             if (!options.noconvert) out = Logger.convert(data);
-            if(!this._noprefix || options.prefix) out = `[SUCCESS]: ${out}`;
+            if (!this._noprefix || options.prefix) out = `[SUCCESS]: ${out}`;
         }
 
         console.log(chalk.green(out));
@@ -177,8 +177,8 @@ class Logger {
      * Add or replace log levels
      * @param  {(array|string)} levels - If set (array) or add (string) the level
      * @param {string} [options.level] - Log with custom log level
-     * @param {bool} [noconvert] - Disable timestamp
-     * @param {bool} [prefix] - Enable prefix
+     * @param {bool} [options.noconvert] - Disable timestamp
+     * @param {bool} [options.prefix] - Enable prefix
      * @returns {this} this
      */
     setLevels(levels) {
@@ -197,8 +197,8 @@ class Logger {
      * Remove log level
      * @param  {string} level - Level whitch you want to remove
      * @param {string} [options.level] - Log with custom log level
-     * @param {bool} [noconvert] - Disable timestamp
-     * @param {bool} [prefix] - Enable prefix
+     * @param {bool} [options.noconvert] - Disable timestamp
+     * @param {bool} [options.prefix] - Enable prefix
      * @returns {this} this
      */
     removeLevel(level) {
@@ -254,7 +254,7 @@ class Logger {
         return Logger.timestamp(out); //TODO: options.timestamp
     }
 
-    
+
     /**
      * Add timestamp
      * @private

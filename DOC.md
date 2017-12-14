@@ -4,26 +4,26 @@
 **Kind**: global class  
 
 * [Logger](#Logger)
-    * [.noprefix](#Logger+noprefix) : <code>boolean</code>
-    * [.log(data, options, [noconvert], [prefix])](#Logger+log) ⇒ <code>this</code>
-    * [.warn(data, options, [noconvert], [prefix])](#Logger+warn) ⇒ <code>this</code>
-    * [.error(data, options, [noconvert], [prefix])](#Logger+error) ⇒ <code>this</code>
-    * [.info(data, options, [noconvert], [prefix])](#Logger+info) ⇒ <code>this</code>
-    * [.success(data, options, [noconvert], [prefix])](#Logger+success) ⇒ <code>this</code>
-    * [.setLevels(levels, [noconvert], [prefix])](#Logger+setLevels) ⇒ <code>this</code>
-    * [.removeLevel(level, [noconvert], [prefix])](#Logger+removeLevel) ⇒ <code>this</code>
+    * [.noprefix](#Logger+noprefix) : <code>bool</code>
+    * [.log(data, options)](#Logger+log) ⇒ <code>this</code>
+    * [.warn(data, options)](#Logger+warn) ⇒ <code>this</code>
+    * [.error(data, options)](#Logger+error) ⇒ <code>this</code>
+    * [.info(data, options)](#Logger+info) ⇒ <code>this</code>
+    * [.success(data, options)](#Logger+success) ⇒ <code>this</code>
+    * [.setLevels(levels)](#Logger+setLevels) ⇒ <code>this</code>
+    * [.removeLevel(level)](#Logger+removeLevel) ⇒ <code>this</code>
     * [.setCallback(event, callback)](#Logger+setCallback) ⇒ <code>this</code>
 
 <a name="Logger+noprefix"></a>
 
-### logger.noprefix : <code>boolean</code>
+### logger.noprefix : <code>bool</code>
 Disable prefix by default
 
 **Kind**: instance property of [<code>Logger</code>](#Logger)  
 **Access**: public  
 <a name="Logger+log"></a>
 
-### logger.log(data, options, [noconvert], [prefix]) ⇒ <code>this</code>
+### logger.log(data, options) ⇒ <code>this</code>
 Advance console.log
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -34,12 +34,12 @@ Advance console.log
 | data | <code>any</code> | data |
 | options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
 | [options.level] | <code>string</code> | Log with custom log level |
-| [noconvert] | <code>bool</code> | Disable timestamp |
-| [prefix] | <code>bool</code> | Enable prefix |
+| [options.noconvert] | <code>bool</code> | Disable timestamp |
+| [options.prefix] | <code>bool</code> | Enable prefix |
 
 <a name="Logger+warn"></a>
 
-### logger.warn(data, options, [noconvert], [prefix]) ⇒ <code>this</code>
+### logger.warn(data, options) ⇒ <code>this</code>
 Advance console.warn
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -50,12 +50,12 @@ Advance console.warn
 | data | <code>any</code> | data |
 | options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
 | [options.level] | <code>string</code> | Log with custom log level |
-| [noconvert] | <code>bool</code> | Disable timestamp |
-| [prefix] | <code>bool</code> | Enable prefix |
+| [options.noconvert] | <code>bool</code> | Disable timestamp |
+| [options.prefix] | <code>bool</code> | Enable prefix |
 
 <a name="Logger+error"></a>
 
-### logger.error(data, options, [noconvert], [prefix]) ⇒ <code>this</code>
+### logger.error(data, options) ⇒ <code>this</code>
 Advance console.error
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -66,12 +66,12 @@ Advance console.error
 | data | <code>any</code> | data |
 | options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
 | [options.level] | <code>string</code> | Log with custom log level |
-| [noconvert] | <code>bool</code> | Disable timestamp |
-| [prefix] | <code>bool</code> | Enable prefix |
+| [options.noconvert] | <code>bool</code> | Disable timestamp |
+| [options.prefix] | <code>bool</code> | Enable prefix |
 
 <a name="Logger+info"></a>
 
-### logger.info(data, options, [noconvert], [prefix]) ⇒ <code>this</code>
+### logger.info(data, options) ⇒ <code>this</code>
 Advance console.info
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -82,12 +82,12 @@ Advance console.info
 | data | <code>any</code> | data |
 | options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
 | [options.level] | <code>string</code> | Log with custom log level |
-| [noconvert] | <code>bool</code> | Disable timestamp |
-| [prefix] | <code>bool</code> | Enable prefix |
+| [options.noconvert] | <code>bool</code> | Disable timestamp |
+| [options.prefix] | <code>bool</code> | Enable prefix |
 
 <a name="Logger+success"></a>
 
-### logger.success(data, options, [noconvert], [prefix]) ⇒ <code>this</code>
+### logger.success(data, options) ⇒ <code>this</code>
 Analog of info but green
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -98,12 +98,12 @@ Analog of info but green
 | data | <code>any</code> | data |
 | options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
 | [options.level] | <code>string</code> | Log with custom log level |
-| [noconvert] | <code>bool</code> | Disable timestamp |
-| [prefix] | <code>bool</code> | Enable prefix |
+| [options.noconvert] | <code>bool</code> | Disable timestamp |
+| [options.prefix] | <code>bool</code> | Enable prefix |
 
 <a name="Logger+setLevels"></a>
 
-### logger.setLevels(levels, [noconvert], [prefix]) ⇒ <code>this</code>
+### logger.setLevels(levels) ⇒ <code>this</code>
 Add or replace log levels
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -113,12 +113,12 @@ Add or replace log levels
 | --- | --- | --- |
 | levels | <code>array</code> \| <code>string</code> | If set (array) or add (string) the level |
 | [options.level] | <code>string</code> | Log with custom log level |
-| [noconvert] | <code>bool</code> | Disable timestamp |
-| [prefix] | <code>bool</code> | Enable prefix |
+| [options.noconvert] | <code>bool</code> | Disable timestamp |
+| [options.prefix] | <code>bool</code> | Enable prefix |
 
 <a name="Logger+removeLevel"></a>
 
-### logger.removeLevel(level, [noconvert], [prefix]) ⇒ <code>this</code>
+### logger.removeLevel(level) ⇒ <code>this</code>
 Remove log level
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -128,8 +128,8 @@ Remove log level
 | --- | --- | --- |
 | level | <code>string</code> | Level whitch you want to remove |
 | [options.level] | <code>string</code> | Log with custom log level |
-| [noconvert] | <code>bool</code> | Disable timestamp |
-| [prefix] | <code>bool</code> | Enable prefix |
+| [options.noconvert] | <code>bool</code> | Disable timestamp |
+| [options.prefix] | <code>bool</code> | Enable prefix |
 
 <a name="Logger+setCallback"></a>
 
