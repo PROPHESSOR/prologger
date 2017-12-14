@@ -4,7 +4,7 @@
 ProLogger is a simple logger with extension support
 Look at test.js for examples ;)
 
-#Documentation
+# Documentation
 
 ## Logger
 **Kind**: global class  
