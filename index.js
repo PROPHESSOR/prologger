@@ -15,14 +15,19 @@
 "use strict";
 
 const chalk = require("chalk");
+const dateFormat = require('dateformat');
+const EventEmitter = require('events').EventEmitter;
+
 /**
  * @class
  */
-class Logger {
+class Logger extends EventEmitter {
     /**
      * @constructor
      */
     constructor() {
+        super();
+
         this.log = this.log.bind(this);
         this.warn = this.warn.bind(this);
         this.error = this.error.bind(this);
@@ -31,17 +36,15 @@ class Logger {
         this.setLevels = this.setLevels.bind(this);
         this.removeLevel = this.removeLevel.bind(this);
         this.setCallback = this.setCallback.bind(this);
+        this.on = this.on.bind(this);
+        this.emit = this.emit.bind(this);
 
         this._noprefix = false;
+        this._dateformat = 'yyyy/mm/dd H:MM:ss.l';
+
+        this.on('error', () => {}); // No unhandled error
 
         this.levels = [];
-        this.callbacks = {
-            log() {},
-            error() {},
-            warn() {},
-            info() {},
-            success() {}
-        };
     }
 
     /**
@@ -56,6 +59,14 @@ class Logger {
 
     set noprefix(bool) {
         this._noprefix = !!bool;
+    }
+
+    get dateformat() {
+        return this._dateformat;
+    }
+
+    set dateformat(s) {
+        this._dateformat = s.toString();
     }
 
 
@@ -77,7 +88,7 @@ class Logger {
         }
 
         console.log(chalk.cyan(out));
-        this.callbacks.log(out);
+        this.emit('log', out);
 
         return this;
     }
@@ -100,7 +111,7 @@ class Logger {
         }
 
         console.warn(chalk.yellow(out));
-        this.callbacks.warn(out);
+        this.emit('warn', out);
 
         return this;
     }
@@ -123,7 +134,7 @@ class Logger {
         }
 
         console.error(chalk.red(out));
-        this.callbacks.error(out);
+        this.emit('error', out);
 
         return this;
     }
@@ -146,7 +157,7 @@ class Logger {
         }
 
         console.info(chalk.blue(out));
-        this.callbacks.info(out);
+        this.emit('info', out);
 
         return this;
     }
@@ -169,7 +180,7 @@ class Logger {
         }
 
         console.log(chalk.green(out));
-        this.callbacks.success(out);
+        this.emit('success', out);
 
         return this;
     }
@@ -218,8 +229,7 @@ class Logger {
      * @returns {this} this
      */
     setCallback(event, callback = () => {}) {
-        if (!this.callbacks[event]) return this.log(new Error(`[LOGGER]: Invalid event ${event}`));
-        this.callbacks[event] = callback;
+        this.on(event, callback);
 
         return this;
     }
@@ -251,7 +261,7 @@ class Logger {
             console.error(error.stack); // Debug
         }
 
-        return Logger.timestamp(out); //TODO: options.timestamp
+        return Logger.timestamp(out, this._dateformat); //TODO: options.timestamp
     }
 
 
@@ -261,8 +271,9 @@ class Logger {
      * @static
      * @param {string} data - String
      */
-    static timestamp(data) {
-        return `[${Date.now()}] ${data}`;
+    static timestamp(data, format = 'yyyy/mm/dd H:MM:ss.l') {
+        const date = dateFormat(new Date(), format);
+        return `[${date}] ${data}`;
     }
 
 }

@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/PROPHESSOR/prologger#readme",
   "dependencies": {
-    "chalk": "^2.3.0"
+    "chalk": "^2.3.0",
+    "dateformat": "^3.0.2"
   }
 }
