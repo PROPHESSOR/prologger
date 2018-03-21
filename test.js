@@ -1,9 +1,13 @@
+#!/usr/env node
+
+// Node.js test
 "use strict";
 
 const Logger = require("./");
-Logger.setLevels(["test"]);
-Logger.noprefix = true;
-const {	log, warn, error, info,success } = Logger;
+const logger = new Logger({
+	levels: ["test"]
+})
+const {	log, warn, error, info,success } = logger;
 
 log("Logger.log");
 
@@ -16,23 +20,23 @@ success("Logger.success");
 error("Logger.error");
 
 log("Log with a custom log level \"test\"", {
-	level: "test"
+    level: "test"
 });
 
 log("Log with a custom log level \"test2\"", {
-	level: "test2"
+    level: "test2"
 });
 
 log("Log without timestamp", {
-	noconvert: true
+    noconvert: true
 });
 
 log("Log with prefix and without timestamp", {
-	prefix: true,
-	noconvert: true
-})
+    prefix: true,
+    noconvert: true
+});
 
 log("Log with prefix and timestamp", {
-	prefix: true,
-	noconvert: false
-})
+    prefix: true,
+    noconvert: false
+});
