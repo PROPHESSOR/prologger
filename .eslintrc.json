@@ -7,12 +7,13 @@
     },
     "extends": "eslint:recommended",
     "rules": {
+        "valid-jsdoc": "error",
+        "no-undef": "warn",
+        "no-unused-vars": "warn",
         "no-console": "off",
-        "valid-jsdoc":"error",
         "indent": [
             "error",
-            "space",
-            4
+            "tab"
         ],
         "linebreak-style": [
             "error",
@@ -20,7 +21,7 @@
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "semi": [
             "error",
