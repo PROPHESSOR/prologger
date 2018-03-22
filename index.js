@@ -91,7 +91,8 @@ class Logger extends EventEmitter {
 
 	/** Returns full (config + current options) optinos
 	 * @private
-	 * @param  {} options
+	 * @param  {object} options - Local options
+	 * @returns {object} Full options (this._config + local)
 	 */
 	[symbols.getFullOptions](options) {
 		const params = {};
@@ -310,36 +311,6 @@ class Logger extends EventEmitter {
 		this.on(event, callback);
 
 		return this;
-	}
-
-	/**
-	 * Add timestamp and more modifications
-	 * @private
-	 * @static
-	 * @param {any} data - Data to convert
-	 */
-	static convert(data) {
-		let out = data;
-		let error = null;
-
-		if (out instanceof Error) {
-			error = out;
-			out = out.message;
-		}
-
-		if (typeof out === 'object') {
-			try {
-				out = JSON.stringify(out);
-			} catch (e) {
-				// Ok...
-			}
-		}
-
-		if (error) {
-			console.error(error.stack); // Debug
-		}
-
-		return Logger.timestamp(out, this._dateformat); //TODO: options.timestamp
 	}
 
 	bundle(data, { from, date, type }) {

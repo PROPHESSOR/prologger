@@ -175,7 +175,7 @@ describe('Проверка на корректное отображение leve
 			expect(() => logger.addLevels(null)).toThrowError('Levels must be an Array or a String');
 		});
 
-		test('removeLevel при получении не строки и не массива должен вернуть ошибку', () => {
+		test('removeLevel при получении не строки должен вернуть ошибку', () => {
 			const logger = new Logger();
 			expect(() => logger.removeLevel(null)).toThrowError('Argument must be a String');
 		});
