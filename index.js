@@ -111,10 +111,15 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.log
 	 * @param  {any} data - data
-	 * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-	 * @param {string} [options.level] - Log with custom log level
-	 * @param {bool} [options.noconvert] - Disable timestamp
-	 * @param {bool} [options.prefix] - Enable prefix
+	 * @param  {object} options - Options
+	 * @param  {string} [options.from] - from prefix (like "Validator")
+	 * @param  {string} [options.level] - custom log level
+	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
+	 * @param  {string} [options.dateFormat] - Date/time prefix format (for the dateformat library)
+	 * @param  {bool} [options.showFrom] - Enable/disable from prefix
+	 * @param  {bool} [optinos.showColors] - Enable/disable unix color mode
+	 * @param  {bool} [options.showMsgTypes] - Enable/disable prefix like [LOG]:
+	 * @param  {bool} [options.showDate] - Enable/disable date/time prefix
 	 * @returns {this} this
 	 */
 	log(data, options = {}) {
@@ -142,10 +147,15 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.warn
 	 * @param  {any} data - data
-	 * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-	 * @param {string} [options.level] - Log with custom log level
-	 * @param {bool} [options.noconvert] - Disable timestamp
-	 * @param {bool} [options.prefix] - Enable prefix
+	 * @param  {object} options - Options
+	 * @param  {string} [options.from] - from prefix (like "Validator")
+	 * @param  {string} [options.level] - custom log level
+	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
+	 * @param  {string} [options.dateFormat] - Date/time prefix format (for the dateformat library)
+	 * @param  {bool} [options.showFrom] - Enable/disable from prefix
+	 * @param  {bool} [optinos.showColors] - Enable/disable unix color mode
+	 * @param  {bool} [options.showMsgTypes] - Enable/disable prefix like [LOG]:
+	 * @param  {bool} [options.showDate] - Enable/disable date/time prefix
 	 * @returns {this} this
 	 */
 	warn(data, options = {}) {
@@ -173,10 +183,15 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.error
 	 * @param  {any} data - data
-	 * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-	 * @param {string} [options.level] - Log with custom log level
-	 * @param {bool} [options.noconvert] - Disable timestamp
-	 * @param {bool} [options.prefix] - Enable prefix
+	 * @param  {object} options - Options
+	 * @param  {string} [options.from] - from prefix (like "Validator")
+	 * @param  {string} [options.level] - custom log level
+	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
+	 * @param  {string} [options.dateFormat] - Date/time prefix format (for the dateformat library)
+	 * @param  {bool} [options.showFrom] - Enable/disable from prefix
+	 * @param  {bool} [optinos.showColors] - Enable/disable unix color mode
+	 * @param  {bool} [options.showMsgTypes] - Enable/disable prefix like [LOG]:
+	 * @param  {bool} [options.showDate] - Enable/disable date/time prefix
 	 * @returns {this} this
 	 */
 	error(data, options = {}) {
@@ -204,10 +219,15 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.info
 	 * @param  {any} data - data
-	 * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-	 * @param {string} [options.level] - Log with custom log level
-	 * @param {bool} [options.noconvert] - Disable timestamp
-	 * @param {bool} [options.prefix] - Enable prefix
+	 * @param  {object} options - Options
+	 * @param  {string} [options.from] - from prefix (like "Validator")
+	 * @param  {string} [options.level] - custom log level
+	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
+	 * @param  {string} [options.dateFormat] - Date/time prefix format (for the dateformat library)
+	 * @param  {bool} [options.showFrom] - Enable/disable from prefix
+	 * @param  {bool} [optinos.showColors] - Enable/disable unix color mode
+	 * @param  {bool} [options.showMsgTypes] - Enable/disable prefix like [LOG]:
+	 * @param  {bool} [options.showDate] - Enable/disable date/time prefix
 	 * @returns {this} this
 	 */
 	info(data, options = {}) {
@@ -235,10 +255,15 @@ class Logger extends EventEmitter {
 	/**
 	 * Analog of info but green
 	 * @param  {any} data - data
-	 * @param  {(object|undefined|any)} options - Options || disable [PREFIX]
-	 * @param {string} [options.level] - Log with custom log level
-	 * @param {bool} [options.noconvert] - Disable timestamp
-	 * @param {bool} [options.prefix] - Enable prefix
+	 * @param  {object} options - Options
+	 * @param  {string} [options.from] - from prefix (like "Validator")
+	 * @param  {string} [options.level] - custom log level
+	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
+	 * @param  {string} [options.dateFormat] - Date/time prefix format (for the dateformat library)
+	 * @param  {bool} [options.showFrom] - Enable/disable from prefix
+	 * @param  {bool} [optinos.showColors] - Enable/disable unix color mode
+	 * @param  {bool} [options.showMsgTypes] - Enable/disable prefix like [LOG]:
+	 * @param  {bool} [options.showDate] - Enable/disable date/time prefix
 	 * @returns {this} this
 	 */
 	success(data, options = {}) {

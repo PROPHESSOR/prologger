@@ -41,10 +41,15 @@ Advance console.log
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
-| [options.level] | <code>string</code> | Log with custom log level |
-| [options.noconvert] | <code>bool</code> | Disable timestamp |
-| [options.prefix] | <code>bool</code> | Enable prefix |
+| options | <code>object</code> | Options |
+| [options.from] | <code>string</code> | from prefix (like "Validator") |
+| [options.level] | <code>string</code> | custom log level |
+| [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
+| [options.dateFormat] | <code>string</code> | Date/time prefix format (for the dateformat library) |
+| [options.showFrom] | <code>bool</code> | Enable/disable from prefix |
+| [optinos.showColors] | <code>bool</code> | Enable/disable unix color mode |
+| [options.showMsgTypes] | <code>bool</code> | Enable/disable prefix like [LOG]: |
+| [options.showDate] | <code>bool</code> | Enable/disable date/time prefix |
 
 <a name="Logger+warn"></a>
 
@@ -57,10 +62,15 @@ Advance console.warn
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
-| [options.level] | <code>string</code> | Log with custom log level |
-| [options.noconvert] | <code>bool</code> | Disable timestamp |
-| [options.prefix] | <code>bool</code> | Enable prefix |
+| options | <code>object</code> | Options |
+| [options.from] | <code>string</code> | from prefix (like "Validator") |
+| [options.level] | <code>string</code> | custom log level |
+| [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
+| [options.dateFormat] | <code>string</code> | Date/time prefix format (for the dateformat library) |
+| [options.showFrom] | <code>bool</code> | Enable/disable from prefix |
+| [optinos.showColors] | <code>bool</code> | Enable/disable unix color mode |
+| [options.showMsgTypes] | <code>bool</code> | Enable/disable prefix like [LOG]: |
+| [options.showDate] | <code>bool</code> | Enable/disable date/time prefix |
 
 <a name="Logger+error"></a>
 
@@ -73,10 +83,15 @@ Advance console.error
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
-| [options.level] | <code>string</code> | Log with custom log level |
-| [options.noconvert] | <code>bool</code> | Disable timestamp |
-| [options.prefix] | <code>bool</code> | Enable prefix |
+| options | <code>object</code> | Options |
+| [options.from] | <code>string</code> | from prefix (like "Validator") |
+| [options.level] | <code>string</code> | custom log level |
+| [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
+| [options.dateFormat] | <code>string</code> | Date/time prefix format (for the dateformat library) |
+| [options.showFrom] | <code>bool</code> | Enable/disable from prefix |
+| [optinos.showColors] | <code>bool</code> | Enable/disable unix color mode |
+| [options.showMsgTypes] | <code>bool</code> | Enable/disable prefix like [LOG]: |
+| [options.showDate] | <code>bool</code> | Enable/disable date/time prefix |
 
 <a name="Logger+info"></a>
 
@@ -89,10 +104,15 @@ Advance console.info
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
-| [options.level] | <code>string</code> | Log with custom log level |
-| [options.noconvert] | <code>bool</code> | Disable timestamp |
-| [options.prefix] | <code>bool</code> | Enable prefix |
+| options | <code>object</code> | Options |
+| [options.from] | <code>string</code> | from prefix (like "Validator") |
+| [options.level] | <code>string</code> | custom log level |
+| [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
+| [options.dateFormat] | <code>string</code> | Date/time prefix format (for the dateformat library) |
+| [options.showFrom] | <code>bool</code> | Enable/disable from prefix |
+| [optinos.showColors] | <code>bool</code> | Enable/disable unix color mode |
+| [options.showMsgTypes] | <code>bool</code> | Enable/disable prefix like [LOG]: |
+| [options.showDate] | <code>bool</code> | Enable/disable date/time prefix |
 
 <a name="Logger+success"></a>
 
@@ -105,10 +125,15 @@ Analog of info but green
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> \| <code>undefined</code> \| <code>any</code> | Options || disable [PREFIX] |
-| [options.level] | <code>string</code> | Log with custom log level |
-| [options.noconvert] | <code>bool</code> | Disable timestamp |
-| [options.prefix] | <code>bool</code> | Enable prefix |
+| options | <code>object</code> | Options |
+| [options.from] | <code>string</code> | from prefix (like "Validator") |
+| [options.level] | <code>string</code> | custom log level |
+| [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
+| [options.dateFormat] | <code>string</code> | Date/time prefix format (for the dateformat library) |
+| [options.showFrom] | <code>bool</code> | Enable/disable from prefix |
+| [optinos.showColors] | <code>bool</code> | Enable/disable unix color mode |
+| [options.showMsgTypes] | <code>bool</code> | Enable/disable prefix like [LOG]: |
+| [options.showDate] | <code>bool</code> | Enable/disable date/time prefix |
 
 <a name="Logger+addLevels"></a>
 
