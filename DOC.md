@@ -4,23 +4,32 @@
 **Kind**: global class  
 
 * [Logger](#Logger)
-    * [.noprefix](#Logger+noprefix) : <code>bool</code>
+    * [new Logger(options)](#new_Logger_new)
     * [.log(data, options)](#Logger+log) ⇒ <code>this</code>
     * [.warn(data, options)](#Logger+warn) ⇒ <code>this</code>
     * [.error(data, options)](#Logger+error) ⇒ <code>this</code>
     * [.info(data, options)](#Logger+info) ⇒ <code>this</code>
     * [.success(data, options)](#Logger+success) ⇒ <code>this</code>
-    * [.setLevels(levels)](#Logger+setLevels) ⇒ <code>this</code>
+    * [.addLevels(levels)](#Logger+addLevels) ⇒ <code>this</code>
     * [.removeLevel(level)](#Logger+removeLevel) ⇒ <code>this</code>
     * [.setCallback(event, callback)](#Logger+setCallback) ⇒ <code>this</code>
 
-<a name="Logger+noprefix"></a>
+<a name="new_Logger_new"></a>
 
-### logger.noprefix : <code>bool</code>
-Disable prefix by default
+### new Logger(options)
 
-**Kind**: instance property of [<code>Logger</code>](#Logger)  
-**Access**: public  
+| Param | Type | Description |
+| --- | --- | --- |
+| options | <code>object</code> | Options |
+| [options.levels] | <code>array</code> | Show only this levels of log |
+| [options.from] | <code>string</code> | Default "from" prefix |
+| [options.showFrom] | <code>bool</code> | Prefix like [App->Composer]: |
+| [options.showMsgTypes] | <code>bool</code> | Prefix like [LOG]: |
+| [options.showColors] | <code>bool</code> | Unix terminal colors |
+| [options.showDate] | <code>bool</code> | Date/Time prefix |
+| [options.dateFormat] | <code>string</code> | Date/Time prefix format (dateformat lib) |
+| [optinos.pure] | <code>bool</code> | Disable all features. JUST (COLORFUL) console.log |
+
 <a name="Logger+log"></a>
 
 ### logger.log(data, options) ⇒ <code>this</code>
@@ -101,9 +110,9 @@ Analog of info but green
 | [options.noconvert] | <code>bool</code> | Disable timestamp |
 | [options.prefix] | <code>bool</code> | Enable prefix |
 
-<a name="Logger+setLevels"></a>
+<a name="Logger+addLevels"></a>
 
-### logger.setLevels(levels) ⇒ <code>this</code>
+### logger.addLevels(levels) ⇒ <code>this</code>
 Add or replace log levels
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
