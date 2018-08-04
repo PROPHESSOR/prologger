@@ -117,7 +117,7 @@ Advance console.info
 <a name="Logger+success"></a>
 
 ### logger.success(data, [options]) ⇒ <code>this</code>
-Analog of info but green
+Alternative to info but green
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
 **Returns**: <code>this</code> - this  

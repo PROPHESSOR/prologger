@@ -5,7 +5,6 @@
  * Simple usage:
  * Log.setLevels(["name of level"]);
  * Log.log/warn/error/info("message", { //optional object
- * 	noconvert: true/false, //Disable convertation (timestamps and else)
  * 	level: "name of level"
  * });
  * Log.log("message");
@@ -26,7 +25,7 @@
 
 const node = typeof require === 'function';
 
-const colors = node ? require('colors') : null;
+const colors = node ? require('colors') : null; // eslint-disable-line no-unused-vars
 const dateFormat = node ? require('dateformat') : null;
 const { EventEmitter } = node ? require('events') : class { };
 
@@ -133,7 +132,7 @@ class Logger extends EventEmitter {
 		if (!params.pure) {
 			out = this.bundle(out, {
 				from: params.from ? `{${params.from}}` : null,
-				date: params.showDate ? `[${Logger.timestamp()}]` : null,
+				date: params.showDate ? `[${Logger.timestamp(params.dateFormat)}]` : null,
 				type: params.showMsgTypes ? '[LOG]:' : null
 			});
 		}
@@ -169,7 +168,7 @@ class Logger extends EventEmitter {
 		if (!params.pure) {
 			out = this.bundle(out, {
 				from: params.from ? `{${params.from}}` : null,
-				date: params.showDate ? `[${Logger.timestamp()}]` : null,
+				date: params.showDate ? `[${Logger.timestamp(params.dateFormat)}]` : null,
 				type: params.showMsgTypes ? '[WARN]:' : null
 			});
 		}
@@ -205,7 +204,7 @@ class Logger extends EventEmitter {
 		if (!params.pure) {
 			out = this.bundle(out, {
 				from: params.from ? `{${params.from}}` : null,
-				date: params.showDate ? `[${Logger.timestamp()}]` : null,
+				date: params.showDate ? `[${Logger.timestamp(params.dateFormat)}]` : null,
 				type: params.showMsgTypes ? '[ERR]:' : null
 			});
 		}
@@ -241,7 +240,7 @@ class Logger extends EventEmitter {
 		if (!params.pure) {
 			out = this.bundle(out, {
 				from: params.from ? `{${params.from}}` : null,
-				date: params.showDate ? `[${Logger.timestamp()}]` : null,
+				date: params.showDate ? `[${Logger.timestamp(params.dateFormat)}]` : null,
 				type: params.showMsgTypes ? '[INFO]:' : null
 			});
 		}
@@ -253,7 +252,7 @@ class Logger extends EventEmitter {
 	}
 
 	/**
-	 * Analog of info but green
+	 * Alternative to info but green
 	 * @param  {any} data - data
 	 * @param  {object} [options] - Options
 	 * @param  {string} [options.from] - from prefix (like "Validator")
@@ -277,7 +276,7 @@ class Logger extends EventEmitter {
 		if (!params.pure) {
 			out = this.bundle(out, {
 				from: params.from ? `{${params.from}}` : null,
-				date: params.showDate ? `[${Logger.timestamp()}]` : null,
+				date: params.showDate ? `[${Logger.timestamp(params.dateFormat)}]` : null,
 				type: params.showMsgTypes ? '[OK]:' : null
 			});
 		}
