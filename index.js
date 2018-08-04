@@ -14,7 +14,7 @@
 /**
   * options:
   *     level - Уровень, если работает скрытие. log/error/debug/
-  *     from - 
+  *     from
   *     showMsgTypes
   *     showColors
   *     showDate
@@ -137,7 +137,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.log(params.showColors ? out.cyan : out);
+		console.log(params.showColors ? colors.cyan(out) : out);
 		this.emit('log', out);
 
 		return this;
@@ -173,7 +173,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.warn(params.showColors ? out.yellow : out);
+		console.warn(params.showColors ? colors.yellow(out) : out);
 		this.emit('warn', out);
 
 		return this;
@@ -209,7 +209,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.error(params.showColors ? out.red : out);
+		console.error(params.showColors ? colors.red(out) : out);
 		this.emit('error', out);
 
 		return this;
@@ -245,7 +245,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.info(params.showColors ? out.blue : out);
+		console.info(params.showColors ? colors.blue(out) : out);
 		this.emit('info', out);
 
 		return this;
@@ -281,7 +281,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.log(params.showColors ? out.green : out);
+		console.log(params.showColors ? colors.green(out) : out);
 		this.emit('success', out);
 
 		return this;
