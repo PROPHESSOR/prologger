@@ -5,11 +5,11 @@
 
 * [Logger](#Logger)
     * [new Logger(options)](#new_Logger_new)
-    * [.log(data, options)](#Logger+log) ⇒ <code>this</code>
-    * [.warn(data, options)](#Logger+warn) ⇒ <code>this</code>
-    * [.error(data, options)](#Logger+error) ⇒ <code>this</code>
-    * [.info(data, options)](#Logger+info) ⇒ <code>this</code>
-    * [.success(data, options)](#Logger+success) ⇒ <code>this</code>
+    * [.log(data, [options])](#Logger+log) ⇒ <code>this</code>
+    * [.warn(data, [options])](#Logger+warn) ⇒ <code>this</code>
+    * [.error(data, [options])](#Logger+error) ⇒ <code>this</code>
+    * [.info(data, [options])](#Logger+info) ⇒ <code>this</code>
+    * [.success(data, [options])](#Logger+success) ⇒ <code>this</code>
     * [.addLevels(levels)](#Logger+addLevels) ⇒ <code>this</code>
     * [.removeLevel(level)](#Logger+removeLevel) ⇒ <code>this</code>
     * [.setCallback(event, callback)](#Logger+setCallback) ⇒ <code>this</code>
@@ -32,7 +32,7 @@
 
 <a name="Logger+log"></a>
 
-### logger.log(data, options) ⇒ <code>this</code>
+### logger.log(data, [options]) ⇒ <code>this</code>
 Advance console.log
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -41,7 +41,7 @@ Advance console.log
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> | Options |
+| [options] | <code>object</code> | Options |
 | [options.from] | <code>string</code> | from prefix (like "Validator") |
 | [options.level] | <code>string</code> | custom log level |
 | [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
@@ -53,7 +53,7 @@ Advance console.log
 
 <a name="Logger+warn"></a>
 
-### logger.warn(data, options) ⇒ <code>this</code>
+### logger.warn(data, [options]) ⇒ <code>this</code>
 Advance console.warn
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -62,7 +62,7 @@ Advance console.warn
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> | Options |
+| [options] | <code>object</code> | Options |
 | [options.from] | <code>string</code> | from prefix (like "Validator") |
 | [options.level] | <code>string</code> | custom log level |
 | [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
@@ -74,7 +74,7 @@ Advance console.warn
 
 <a name="Logger+error"></a>
 
-### logger.error(data, options) ⇒ <code>this</code>
+### logger.error(data, [options]) ⇒ <code>this</code>
 Advance console.error
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -83,7 +83,7 @@ Advance console.error
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> | Options |
+| [options] | <code>object</code> | Options |
 | [options.from] | <code>string</code> | from prefix (like "Validator") |
 | [options.level] | <code>string</code> | custom log level |
 | [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
@@ -95,7 +95,7 @@ Advance console.error
 
 <a name="Logger+info"></a>
 
-### logger.info(data, options) ⇒ <code>this</code>
+### logger.info(data, [options]) ⇒ <code>this</code>
 Advance console.info
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -104,7 +104,7 @@ Advance console.info
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> | Options |
+| [options] | <code>object</code> | Options |
 | [options.from] | <code>string</code> | from prefix (like "Validator") |
 | [options.level] | <code>string</code> | custom log level |
 | [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |
@@ -116,7 +116,7 @@ Advance console.info
 
 <a name="Logger+success"></a>
 
-### logger.success(data, options) ⇒ <code>this</code>
+### logger.success(data, [options]) ⇒ <code>this</code>
 Analog of info but green
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -125,7 +125,7 @@ Analog of info but green
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>any</code> | data |
-| options | <code>object</code> | Options |
+| [options] | <code>object</code> | Options |
 | [options.from] | <code>string</code> | from prefix (like "Validator") |
 | [options.level] | <code>string</code> | custom log level |
 | [options.pure] | <code>bool</code> | Disable all features. JUST (colorful) console.log |

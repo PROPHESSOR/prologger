@@ -169,124 +169,125 @@ describe('Проверка на корректное отображение leve
 		expect(console.log.mock.calls.length).toBe(3);
 	});
 
-	describe('Проверка методов addLevels и removeLevel', () => {
-		test('addLevel при получении не строки и не массива должен вернуть ошибку', () => {
-			const logger = new Logger();
-			expect(() => logger.addLevels(null)).toThrowError('Levels must be an Array or a String');
-		});
 
-		test('removeLevel при получении не строки должен вернуть ошибку', () => {
-			const logger = new Logger();
-			expect(() => logger.removeLevel(null)).toThrowError('Argument must be a String');
-		});
 
+});
+
+describe('Проверка методов addLevels и removeLevel', () => {
+	test('addLevel при получении не строки и не массива должен вернуть ошибку', () => {
+		const logger = new Logger();
+		expect(() => logger.addLevels(null)).toThrowError('Levels must be an Array or a String');
 	});
 
-	describe('Проверка добавления уровней отображения', () => {
-		test('Проверка добавления одного уровня (строка)', () => {
-			redefine();
-			const logger = new Logger();
-
-			logger
-				.log(123, { level: 'q' })
-				.addLevels('q')
-				.log(123, { level: 'q' });
-
-			expect(console.log.mock.calls.length).toBe(1);
-		});
-
-		test('Проверка добавления двух уровней (массив)', () => {
-			redefine();
-			const logger = new Logger();
-
-			logger
-				.log(123, { level: 'q' })
-				.log(123, { level: 'w' })
-				.addLevels(['q', 'w'])
-				.log(123, { level: 'q' })
-				.log(123, { level: 'w' });
-
-			expect(console.log.mock.calls.length).toBe(2);
-		});
-
+	test('removeLevel при получении не строки должен вернуть ошибку', () => {
+		const logger = new Logger();
+		expect(() => logger.removeLevel(null)).toThrowError('Argument must be a String');
 	});
 
+});
 
-	describe('Проверка удаления уровней отображения', () => {
-		test('Проверка удаления одного уровня (строка)', () => {
-			redefine();
-			const logger = new Logger({
-				levels: ['q']
-			});
+describe('Проверка добавления уровней отображения', () => {
+	test('Проверка добавления одного уровня (строка)', () => {
+		redefine();
+		const logger = new Logger();
 
-			logger
-				.log(123, { level: 'q' })
-				.removeLevel('q')
-				.log(123, { level: 'q' });
+		logger
+			.log(123, { level: 'q' })
+			.addLevels('q')
+			.log(123, { level: 'q' });
 
-			expect(console.log.mock.calls.length).toBe(1);
-		});
-
+		expect(console.log.mock.calls.length).toBe(1);
 	});
 
+	test('Проверка добавления двух уровней (массив)', () => {
+		redefine();
+		const logger = new Logger();
 
-	describe('Проверка чистого отображения', () => {
-		test('log должен просто передать значение на вывод', () => {
-			redefine();
-			const logger = new Logger({
-				pure: true,
-				showColors: false
-			});
+		logger
+			.log(123, { level: 'q' })
+			.log(123, { level: 'w' })
+			.addLevels(['q', 'w'])
+			.log(123, { level: 'q' })
+			.log(123, { level: 'w' });
 
-			logger.log('q');
-			expect(console.log.mock.calls[0][0]).toBe('q');
-		});
-
-		test('warn должен просто передать значение на вывод', () => {
-			redefine();
-			const logger = new Logger({
-				pure: true,
-				showColors: false
-			});
-
-			logger.warn('q');
-			expect(console.warn.mock.calls[0][0]).toBe('q');
-		});
-
-		test('info должен просто передать значение на вывод', () => {
-			redefine();
-			const logger = new Logger({
-				pure: true,
-				showColors: false
-			});
-
-			logger.info('q');
-			expect(console.info.mock.calls[0][0]).toBe('q');
-		});
-
-		test('error должен просто передать значение на вывод', () => {
-			redefine();
-			const logger = new Logger({
-				pure: true,
-				showColors: false
-			});
-
-			logger.error('q');
-			expect(console.error.mock.calls[0][0]).toBe('q');
-		});
-
-		test('success должен просто передать значение на вывод', () => {
-			redefine();
-			const logger = new Logger({
-				pure: true,
-				showColors: false
-			});
-
-			logger.success('q');
-			expect(console.log.mock.calls[0][0]).toBe('q');
-		});
-
+		expect(console.log.mock.calls.length).toBe(2);
 	});
 
+});
+
+
+describe('Проверка удаления уровней отображения', () => {
+	test('Проверка удаления одного уровня (строка)', () => {
+		redefine();
+		const logger = new Logger({
+			levels: ['q']
+		});
+
+		logger
+			.log(123, { level: 'q' })
+			.removeLevel('q')
+			.log(123, { level: 'q' });
+
+		expect(console.log.mock.calls.length).toBe(1);
+	});
+
+});
+
+
+describe('Проверка чистого отображения', () => {
+	test('log должен просто передать значение на вывод', () => {
+		redefine();
+		const logger = new Logger({
+			pure: true,
+			showColors: false
+		});
+
+		logger.log('q');
+		expect(console.log.mock.calls[0][0]).toBe('q');
+	});
+
+	test('warn должен просто передать значение на вывод', () => {
+		redefine();
+		const logger = new Logger({
+			pure: true,
+			showColors: false
+		});
+
+		logger.warn('q');
+		expect(console.warn.mock.calls[0][0]).toBe('q');
+	});
+
+	test('info должен просто передать значение на вывод', () => {
+		redefine();
+		const logger = new Logger({
+			pure: true,
+			showColors: false
+		});
+
+		logger.info('q');
+		expect(console.info.mock.calls[0][0]).toBe('q');
+	});
+
+	test('error должен просто передать значение на вывод', () => {
+		redefine();
+		const logger = new Logger({
+			pure: true,
+			showColors: false
+		});
+
+		logger.error('q');
+		expect(console.error.mock.calls[0][0]).toBe('q');
+	});
+
+	test('success должен просто передать значение на вывод', () => {
+		redefine();
+		const logger = new Logger({
+			pure: true,
+			showColors: false
+		});
+
+		logger.success('q');
+		expect(console.log.mock.calls[0][0]).toBe('q');
+	});
 
 });

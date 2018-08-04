@@ -26,7 +26,7 @@
 
 const node = typeof require === 'function';
 
-const chalk = node ? require('chalk') : null;
+const colors = node ? require('colors') : null;
 const dateFormat = node ? require('dateformat') : null;
 const { EventEmitter } = node ? require('events') : class { };
 
@@ -111,7 +111,7 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.log
 	 * @param  {any} data - data
-	 * @param  {object} options - Options
+	 * @param  {object} [options] - Options
 	 * @param  {string} [options.from] - from prefix (like "Validator")
 	 * @param  {string} [options.level] - custom log level
 	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
@@ -138,7 +138,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.log(params.showColors ? chalk.cyan(out) : out);
+		console.log(params.showColors ? out.cyan : out);
 		this.emit('log', out);
 
 		return this;
@@ -147,7 +147,7 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.warn
 	 * @param  {any} data - data
-	 * @param  {object} options - Options
+	 * @param  {object} [options] - Options
 	 * @param  {string} [options.from] - from prefix (like "Validator")
 	 * @param  {string} [options.level] - custom log level
 	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
@@ -174,7 +174,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.warn(params.showColors ? chalk.yellow(out) : out);
+		console.warn(params.showColors ? out.yellow : out);
 		this.emit('warn', out);
 
 		return this;
@@ -183,7 +183,7 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.error
 	 * @param  {any} data - data
-	 * @param  {object} options - Options
+	 * @param  {object} [options] - Options
 	 * @param  {string} [options.from] - from prefix (like "Validator")
 	 * @param  {string} [options.level] - custom log level
 	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
@@ -210,7 +210,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.error(params.showColors ? chalk.red(out) : out);
+		console.error(params.showColors ? out.red : out);
 		this.emit('error', out);
 
 		return this;
@@ -219,7 +219,7 @@ class Logger extends EventEmitter {
 	/**
 	 * Advance console.info
 	 * @param  {any} data - data
-	 * @param  {object} options - Options
+	 * @param  {object} [options] - Options
 	 * @param  {string} [options.from] - from prefix (like "Validator")
 	 * @param  {string} [options.level] - custom log level
 	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
@@ -246,7 +246,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.info(params.showColors ? chalk.blue(out) : out);
+		console.info(params.showColors ? out.blue : out);
 		this.emit('info', out);
 
 		return this;
@@ -255,7 +255,7 @@ class Logger extends EventEmitter {
 	/**
 	 * Analog of info but green
 	 * @param  {any} data - data
-	 * @param  {object} options - Options
+	 * @param  {object} [options] - Options
 	 * @param  {string} [options.from] - from prefix (like "Validator")
 	 * @param  {string} [options.level] - custom log level
 	 * @param  {bool} [options.pure] - Disable all features. JUST (colorful) console.log
@@ -282,7 +282,7 @@ class Logger extends EventEmitter {
 			});
 		}
 
-		console.log(params.showColors ? chalk.green(out) : out);
+		console.log(params.showColors ? out.green : out);
 		this.emit('success', out);
 
 		return this;
