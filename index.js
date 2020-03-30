@@ -1,14 +1,12 @@
 /* ProLogger
  *
- * Logger library by PROPHESSOR (2017 - 2018)
+ * Logger library by PROPHESSOR (2017 - 2020)
  *
  * Simple usage:
- * Log.setLevels(["name of level"]);
- * Log.log/warn/error/info("message", { //optional object
- * 	level: "name of level"
- * });
- * Log.log("message");
- * Log.log("message", {noconvert:true});
+ * const { log, success, error } = require('prologger').instance;
+ * log("It's a default log message");
+ * error("This is a test error message").log("And then another log");
+ * success("Successfull without date!", { showDate: false });
  */
 
 /**
@@ -367,5 +365,7 @@ class Logger extends EventEmitter {
 		return symbols;
 	}
 }
+
+Logger.instance = new Logger();
 
 module.exports = Logger;
